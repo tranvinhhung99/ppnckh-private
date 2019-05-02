@@ -1,0 +1,44 @@
+{
+    "trainer":{
+        "lr":0.001,
+        "train_log_file":"data/log/train.log",
+        
+        "run_val":false,
+        "val_log_file":"data/log/val.log",
+        
+        "checkpoint_folder": "data/checkpoint/",
+        "checkpoint_name_format": "{encoder}_{decoder}_{epoch}_{bleu1}.pt",
+        
+        "metric":[
+            "bleu1",
+            "bleu4"
+        ],
+
+        "cider_train":false 
+    },
+
+    "model":{
+        "encoder": "resnet18",
+        "decoder": "bi_lstm",
+        
+        "info":{
+            "encoder": "resnet",
+            "decoder": "bi_lstm"
+        },
+
+        "pretrain":false,
+        "model_weight":""
+        
+    },
+
+    "dataloader":{
+        "train_data_folder":null,
+        "train_txt":null,
+
+        "val_txt":null,
+        "val_data_folder":null,
+
+        "batch_size":32,
+        "num_workers":2
+    }
+}
